@@ -6,12 +6,12 @@ package com.goit.gojavaonline.module4.hw2;
 public class ClassRunProg {
     public static void main(String[] args) {
 
-        Celsius celsius = new Celsius();
         int fahrTemp = 30;
-        System.out.println(fahrTemp+" degrees Fahrengeit equals " + celsius.convertFahrengeitIntoCelsius(fahrTemp) + " degrees Celsius");
+        Celsius celsius = new Celsius(fahrTemp);
+        System.out.println(fahrTemp+" degrees Fahrengeit equals " + celsius.convertFahrengeitIntoCelsius() + " degrees Celsius");
 
-        Fahrenheit fahrenheit = new Fahrenheit();
         int celsiusTemp = 150;
-        System.out.println(celsiusTemp+" degrees Celsius equals " + fahrenheit.convertCelsiusIntoFahrengeit(celsiusTemp) + " degrees Celsius");
+        Fahrenheit fahrenheit = new Fahrenheit(celsiusTemp);
+        System.out.println(celsiusTemp+" degrees Celsius equals " + fahrenheit.convertCelsiusIntoFahrengeit() + " degrees Celsius");
     }
 }

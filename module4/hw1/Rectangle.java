@@ -8,9 +8,13 @@ public class Rectangle extends Figure{
     private int sideA;
     private int sideB;
 
-    public double calcArea(){
-        return sideA*sideB;
+    Rectangle (int sideA, int sideB){
+        this.sideA = sideA;
+        this.sideB = sideB;
+    }
 
+    public double calcArea(){
+        return sideA * sideB;
     }
 
     public int getSideA() {

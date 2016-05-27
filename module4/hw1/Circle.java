@@ -5,11 +5,14 @@ package com.goit.gojavaonline.module4.hw1;
  */
 public class Circle extends Figure {
 
-   private int radius;
+    private int radius;
+
+    Circle (int radius) {
+        this.radius = radius;
+    }
 
     public double calcArea(){
-        return Math.PI* Math.pow(radius,2);
-
+        return Math.PI * Math.pow(radius,2);
     }
 
     public int getRadius() {

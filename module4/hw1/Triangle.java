@@ -9,12 +9,15 @@ public class Triangle extends Figure {
     private int sideB;
     private int sideC;
 
+    Triangle (int sideA, int sideB, int sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
+
     public double calcArea () {
-
-        int p = (sideA + sideB + sideC)/2;
-        return Math.sqrt(p*((p-sideA)*(p-sideB)*(p-sideC)));
-
-
+        int halfPerimeter = (sideA + sideB + sideC)/2;
+        return Math.sqrt( halfPerimeter * ( (halfPerimeter-sideA) * (halfPerimeter-sideB) * (halfPerimeter-sideC) ) );
     }
 
     public int getSideA() {

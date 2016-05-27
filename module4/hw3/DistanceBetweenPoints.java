@@ -1,7 +1,5 @@
 package com.goit.gojavaonline.module4.hw3;
 
-
-
 /**
  * Created by ANTON on 27.05.2016.
  */

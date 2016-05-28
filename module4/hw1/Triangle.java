@@ -5,6 +5,7 @@ package com.goit.gojavaonline.module4.hw1;
  */
 public class Triangle extends Figure {
 
+    // comment
     private int sideA;
     private int sideB;
     private int sideC;

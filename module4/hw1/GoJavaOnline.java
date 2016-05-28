@@ -3,6 +3,7 @@ package com.goit.gojavaonline.module4.hw1;
 /**
  * Created by ANTON on 26.05.2016.
  */
+
 public class GoJavaOnline {
     public static void main(String[] args) {
 
@@ -14,6 +15,5 @@ public class GoJavaOnline {
 
         Circle circle = new Circle(10);
         System.out.println("Circle area is = " + circle.calcArea());
-
     }
 }

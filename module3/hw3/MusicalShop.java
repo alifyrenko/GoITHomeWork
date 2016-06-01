@@ -1,6 +1,6 @@
 package com.goit.gojavaonline.module3.hw3;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by ANTON on 25.05.2016.
@@ -10,6 +10,16 @@ public class MusicalShop {
     private String shopName;
     private String shopAddress;
     private List<MusicalInstrument> musicalInstrumentList;
+
+    private int pianoCount;
+    private int guitarCount;
+    private int trumpetCount;
+
+    public MusicalShop(int pianoCount, int guitarCount, int trumpetCount) {
+        this.pianoCount = pianoCount;
+        this.guitarCount = guitarCount;
+        this.trumpetCount = trumpetCount;
+    }
 
     private void saleInstrument(){}
 
@@ -35,5 +45,10 @@ public class MusicalShop {
 
     public void setMusicalInstrumentList(List<MusicalInstrument> musicalInstrumentList) {
         this.musicalInstrumentList = musicalInstrumentList;
+    }
+
+    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) {
+        List<MusicalInstrument> output = new ArrayList<MusicalInstrument>();
+        return output;
     }
 }

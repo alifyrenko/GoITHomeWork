@@ -5,24 +5,19 @@ package com.goit.gojavaonline.module3.hw3;
  */
 public class MusicalInstrument {
 
-    private String instrumentName;
-    private int instrumentWeight;
+    public static final String GUITAR_INSTRUMENT_NAME = "Guitar";
+    public static final String PIANO_INSTRUMENT_NAME = "Piano";
+    public static final String TRAMPET_INSTRUMENT_NAME = "Trampet";
 
-    private void play(){}
+    public void play() {}
 
     public String getInstrumentName() {
-        return instrumentName;
-    }
-
-    public void setInstrumentName(String instrumentName) {
-        this.instrumentName = instrumentName;
+        return "";
     }
 
     public int getInstrumentWeight() {
-        return instrumentWeight;
+        return 0;
     }
 
-    public void setInstrumentWeight(int instrumentWeight) {
-        this.instrumentWeight = instrumentWeight;
-    }
+
 }

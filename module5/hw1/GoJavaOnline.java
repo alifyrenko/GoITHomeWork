@@ -13,11 +13,11 @@ public class GoJavaOnline {
         System.out.println("Please, enter number of values of your arrayList");
 
         int numOfValuesOfArrayList = scanner.nextInt();
-        double[] arrayList = new double[numOfValuesOfArrayList];
+        int [] arrayList = new int[numOfValuesOfArrayList];
 
         for (int i = 0; i < numOfValuesOfArrayList; i++) {
             System.out.println("Please, enter " + (i + 1) + " of " + numOfValuesOfArrayList + " value of your array");
-            arrayList[i] = scanner.nextDouble();
+            arrayList[i] = scanner.nextInt();
         }
 
         boolean swapOccurred = true;
@@ -26,7 +26,7 @@ public class GoJavaOnline {
             swapOccurred = false;
             for (int i = 0; i < arrayList.length - 1; i++) {
                 if (arrayList[i] > arrayList[i + 1]) {
-                    double tempValue = arrayList[i];
+                    int tempValue = arrayList[i];
                     arrayList[i] = arrayList[i + 1];
                     arrayList[i + 1] = tempValue;
 
@@ -40,11 +40,11 @@ public class GoJavaOnline {
             System.out.println(arrayListPrint);
         }
 
-        double minValueOfArray = arrayList[0];
-        double maxValueOfArray = arrayList[arrayList.length-1];
+        int minValueOfArray = arrayList[0];
+        int maxValueOfArray = arrayList[arrayList.length - 1];
 
-        System.out.println("Minimum of the array is "  + minValueOfArray);
-        System.out.println("Maximum of the array is "  + maxValueOfArray);
+        System.out.println("Minimum of the array is " + minValueOfArray);
+        System.out.println("Maximum of the array is " + maxValueOfArray);
 
     }
 }

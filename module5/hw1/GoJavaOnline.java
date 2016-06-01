@@ -25,7 +25,7 @@ public class GoJavaOnline {
             arrayList[i] = scanner.nextInt();
         }
 
-       /* for (int i = 0; i < arrayList.length; i++) {
+        for (int i = 0; i < arrayList.length; i++) {
             if (i == 0) {
                 minValue = arrayList[0];
                 maxValue = arrayList[0];
@@ -35,11 +35,11 @@ public class GoJavaOnline {
             } else if (arrayList[i] > maxValue) {
                 maxValue = arrayList[i];
             }
-        }*/
+        }
 
-        Arrays.sort(arrayList);
+       /* Arrays.sort(arrayList);
         minValue = arrayList[0];
-        maxValue = arrayList[arrayList.length-1];
+        maxValue = arrayList[arrayList.length-1];*/
 
         System.out.println("Minimum of the array is " + minValue);
         System.out.println("Maximum of the array is " + maxValue);

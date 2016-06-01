@@ -10,7 +10,6 @@ public class NegativeAgeException extends Exception {
         this.ageValue = ageValue;
     }
 
-
     public int getAgeValue (){
         return ageValue;
     }

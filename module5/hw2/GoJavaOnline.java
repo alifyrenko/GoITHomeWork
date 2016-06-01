@@ -15,7 +15,7 @@ public class GoJavaOnline {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numOfValuesOfArrayList;
-        int g = 0;
+
         System.out.println("Please, enter number of values of your arrayList");
 
         try {

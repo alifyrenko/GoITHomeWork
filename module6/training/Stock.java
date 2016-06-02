@@ -1,17 +1,18 @@
-package com.goit.gojavaonline.module6.hw3;
+package com.goit.gojavaonline.module6.training;
 
 /**
- * Created by ANTON on 01.06.2016.
+ * Created by ANTON on 02.06.2016.
  */
 public class Stock {
+
     private int guitarCount;
     private int pianoCount;
     private int trumpetCount;
 
     public Stock(int guitarCount, int pianoCount, int trumpetCount) {
         this.guitarCount = guitarCount;
-        this.trumpetCount = trumpetCount;
         this.pianoCount = pianoCount;
+        this.trumpetCount = trumpetCount;
     }
 
     public int getGuitarCount() {
@@ -22,19 +23,19 @@ public class Stock {
         this.guitarCount = guitarCount;
     }
 
-    public int getTrumpetCount() {
-        return trumpetCount;
-    }
-
-    public void setTrumpetCount(int trumpetCount) {
-        this.trumpetCount = trumpetCount;
-    }
-
     public int getPianoCount() {
         return pianoCount;
     }
 
     public void setPianoCount(int pianoCount) {
         this.pianoCount = pianoCount;
+    }
+
+    public int getTrumpetCount() {
+        return trumpetCount;
+    }
+
+    public void setTrumpetCount(int trumpetCount) {
+        this.trumpetCount = trumpetCount;
     }
 }

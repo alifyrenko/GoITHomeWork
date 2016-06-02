@@ -11,7 +11,6 @@ public class Main {
     public static void main(String[] args) throws NegativeValueException {
 
         MusicInstrumentShop musicInstrumentShop = new MusicInstrumentShop(16, 2, 7);
-        Stock stock = new Stock(5,5,5);
 
         Map<String, Integer> order = new HashMap<>();
 

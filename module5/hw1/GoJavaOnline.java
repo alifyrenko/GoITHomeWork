@@ -36,11 +36,6 @@ public class GoJavaOnline {
                 maxValue = arrayList[i];
             }
         }
-
-       /* Arrays.sort(arrayList);
-        minValue = arrayList[0];
-        maxValue = arrayList[arrayList.length-1];*/
-
         System.out.println("Minimum of the array is " + minValue);
         System.out.println("Maximum of the array is " + maxValue);
     }

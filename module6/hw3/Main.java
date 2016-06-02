@@ -21,6 +21,7 @@ public class Main {
         musicInstrumentShop.prepareInstruments(order);
 
         order.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, 4);
+
         musicInstrumentShop.prepareInstruments(order);
 
         order.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, 1);

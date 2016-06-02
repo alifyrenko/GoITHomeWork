@@ -19,7 +19,7 @@ public class MusicInstrumentShop {
         this.trumpetCount = trumpetCount;
     }
 
-    public List<MusicalInstruments> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
+    public List<MusicalInstruments> prepareInstruments(Map<String, Integer> order)  throws NegativeValueException {
         List<MusicalInstruments> output = new ArrayList<MusicalInstruments>();
 
         Set<String> instruments = order.keySet();
@@ -29,29 +29,46 @@ public class MusicInstrumentShop {
 
             switch (iterator.next()) {
                 case MusicalInstruments.INSTRUMENT_GUITAR_NAME:
-                    guitarCount = guitarCount - order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
-                    if (guitarCount < 0) {
-                        guitarCount = guitarCount + order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
-                        throw new NegativeValueException(guitarCount);
+                    if (guitarCount - order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) < 0) {
+                        if (guitarCount + Stock.guitarCount - order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) < 0) {
+                            throw new NegativeValueException();
+                        } else {
+                            Stock.guitarCount = Stock.guitarCount +guitarCount - order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
+                            guitarCount = 0;
+                        }
+                    } else {
+                        guitarCount = guitarCount - order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
                     }
+
                     iterator.remove();
                     break;
 
                 case MusicalInstruments.INSTRUMENT_PIANO_NAME:
-                    pianoCount = pianoCount - order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
-                    if (pianoCount < 0) {
-                        pianoCount = pianoCount + order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
-                        throw new NegativeValueException(pianoCount);
+                    if (pianoCount - order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) < 0) {
+                        if (pianoCount + Stock.pianoCount - order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) < 0) {
+                            throw new NegativeValueException();
+                        } else {
+                            Stock.pianoCount = Stock.pianoCount + pianoCount - order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
+                            pianoCount = 0;
+                        }
+                    } else {
+                        pianoCount = pianoCount - order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
                     }
                     iterator.remove();
                     break;
 
                 case MusicalInstruments.INSTRUMENT_TRUMPET_NAME:
-                    trumpetCount = trumpetCount - order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
-                    if (trumpetCount < 0) {
-                        trumpetCount = trumpetCount + order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
-                        throw new NegativeValueException(trumpetCount);
+                    if (trumpetCount - order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) < 0) {
+                        if (trumpetCount + Stock.trumpetCount - order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) < 0) {
+                            throw new NegativeValueException();
+                        } else {
+                            Stock.trumpetCount = Stock.trumpetCount +trumpetCount - order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
+                            trumpetCount = 0;
+                        }
+                    } else {
+                        trumpetCount = trumpetCount - order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
                     }
+
                     iterator.remove();
                     break;
             }
@@ -59,7 +76,12 @@ public class MusicInstrumentShop {
 
         System.out.println("You have " + guitarCount + " Guitars, "
                 + pianoCount + " Pianos, "
-                + trumpetCount + " Trumpets on your balance");
+                + trumpetCount + " Trumpets on showRoom");
+
+        System.out.println("You have " + Stock.guitarCount + " Guitars, "
+                + Stock.pianoCount + " Pianos, "
+                + Stock.trumpetCount + " Trumpets on Stock");
+        System.out.println();
 
         return output;
     }

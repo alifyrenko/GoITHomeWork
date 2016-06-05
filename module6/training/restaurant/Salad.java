@@ -6,14 +6,39 @@ import java.util.Map;
 /**
  * Created by ANTON on 03.06.2016.
  */
-public class Salad extends Dish{
+public class Salad {
 
-    @Override
-    void prepareDish() {
-        Map<String,Integer> recipe = new HashMap<>();
-        recipe.put(Products.TOMATO, 1);
-        recipe.put(Products.CUCUMBER, 2);
-        recipe.put(Products.ONION, 2);
-        recipe.put(Products.CABBAGE, 2);
+    final int tomatoesCount = 1;
+    final int cucumberCount = 1;
+    final int onionCount = 1;
+    final int cabbageCount = 1;
+    final int oilCount = 1;
+
+    final int saladPrice = 150;
+
+    public int getSaladPrice() {
+        return saladPrice;
+    }
+
+
+
+    public int getTomatoesCount() {
+        return tomatoesCount;
+    }
+
+    public int getCucumberCount() {
+        return cucumberCount;
+    }
+
+    public int getOnionCount() {
+        return onionCount;
+    }
+
+    public int getCabbageCount() {
+        return cabbageCount;
+    }
+
+    public int getOilCount() {
+        return oilCount;
     }
 }

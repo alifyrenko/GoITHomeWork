@@ -6,13 +6,27 @@ import java.util.Map;
 /**
  * Created by ANTON on 03.06.2016.
  */
-public class FriedPotatos extends Dish {
+public class FriedPotatos {
 
-    @Override
-    void prepareDish() {
-        Map<String,Integer> recipe = new HashMap<>();
-        recipe.put(Products.ONION, 1);
-        recipe.put(Products.POTATO, 1);
-        recipe.put(Products.OIL, 2);
+    final int onionCount = 3;
+    final int potatoesCount = 4;
+    final int oilCount = 2;
+
+    final int potatoesPrice = 230;
+
+    public int getPotatoesPrice() {
+        return potatoesPrice;
+    }
+
+    public int getOnionCount() {
+        return onionCount;
+    }
+
+    public int getPotatoesCount() {
+        return potatoesCount;
+    }
+
+    public int getOilCount() {
+        return oilCount;
     }
 }

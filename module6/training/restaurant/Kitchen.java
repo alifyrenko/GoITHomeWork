@@ -7,11 +7,10 @@ import java.util.Map;
  */
 public class Kitchen {
 
-    Stock stock = new Stock();
-
+    Stock stock;
 
     public void prepareDishes(Map<String, Integer> order) {
-
-
+        stock.isEnoughProductsOnStock(order);
+        }
     }
-}
+

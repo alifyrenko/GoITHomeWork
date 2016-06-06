@@ -24,7 +24,6 @@ public class MusicInstrumentShop {
         this.trumpetCountOnShowRoom = trumpetCountOnShowRoom;
     }
 
-
     public void updateBalanceOnStock(String instrument) {
         switch (instrument) {
             case MusicalInstruments.INSTRUMENT_TRUMPET_NAME:

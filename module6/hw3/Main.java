@@ -10,7 +10,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws NegativeValueException {
 
-        MusicInstrumentShop musicInstrumentShop = new MusicInstrumentShop(16,2,7);
+        MusicInstrumentShop musicInstrumentShop = new MusicInstrumentShop(16, 2, 7);
 
         Map<String, Integer> order = new HashMap<>();
 

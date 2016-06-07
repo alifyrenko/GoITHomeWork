@@ -1,6 +1,5 @@
 package com.goit.gojavaonline.module6.hw3;
 
-import javax.swing.plaf.synth.SynthRootPaneUI;
 import java.util.*;
 
 /**
@@ -8,20 +7,39 @@ import java.util.*;
  */
 public class MusicInstrumentShop {
 
-    private int guitarCountOnShowRoom;
-    private int pianoCountOnShowRoom;
-    private int trumpetCountOnShowRoom;
-
     private int orderInstrumentCount = 0;
-
     Stock stock = new Stock(5, 5, 5);
-
     private List<MusicalInstruments> musicalInstrumentsList;
+    Map<String, Integer> showRoomMap = new HashMap<>();
 
     public MusicInstrumentShop(int guitarCountOnShowRoom, int pianoCountOnShowRoom, int trumpetCountOnShowRoom) {
-        this.guitarCountOnShowRoom = guitarCountOnShowRoom;
-        this.pianoCountOnShowRoom = pianoCountOnShowRoom;
-        this.trumpetCountOnShowRoom = trumpetCountOnShowRoom;
+        int guitarCountOnShowRoom1 = guitarCountOnShowRoom;
+        int pianoCountOnShowRoom1 = pianoCountOnShowRoom;
+        int trumpetCountOnShowRoom1 = trumpetCountOnShowRoom;
+
+        showRoomMap.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, guitarCountOnShowRoom);
+        showRoomMap.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, pianoCountOnShowRoom);
+        showRoomMap.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, trumpetCountOnShowRoom);
+    }
+
+    public void updateBalance(String product) throws NegativeValueException {
+
+        int currInstrumentCountShowRoom = showRoomMap.get(product);
+        int currInstrumentCountStock = stock.stockMap.get(product);
+        int totalInstrumentsCount = currInstrumentCountShowRoom + currInstrumentCountStock;
+        int instrumentCountLeftOnStock = totalInstrumentsCount - orderInstrumentCount;
+        int instrumentCountLeftOnShowRoom = currInstrumentCountShowRoom - orderInstrumentCount;
+
+        if (currInstrumentCountShowRoom < orderInstrumentCount) {
+            if (totalInstrumentsCount < orderInstrumentCount) {
+                throw new NegativeValueException();
+            } else {
+                stock.stockMap.put(product, instrumentCountLeftOnStock);
+                showRoomMap.put(product, 0);
+            }
+        } else {
+            showRoomMap.put(product, instrumentCountLeftOnShowRoom);
+        }
     }
 
     public List<MusicalInstruments> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
@@ -35,98 +53,34 @@ public class MusicInstrumentShop {
             switch (iterator.next()) {
                 case MusicalInstruments.INSTRUMENT_GUITAR_NAME:
                     orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
-
-                    if (guitarCountOnShowRoom < orderInstrumentCount) {
-                        if (guitarCountOnShowRoom + stock.getGuitarCount() < orderInstrumentCount) {
-                            throw new NegativeValueException();
-                        } else {
-                            stock.setGuitarCount(stock.getGuitarCount() - orderInstrumentCount + guitarCountOnShowRoom);
-                            guitarCountOnShowRoom = 0;
-                        }
-                    } else {
-                        guitarCountOnShowRoom = guitarCountOnShowRoom - orderInstrumentCount;
-                    }
-
+                    updateBalance(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
                     iterator.remove();
                     break;
 
                 case MusicalInstruments.INSTRUMENT_PIANO_NAME:
                     orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
-
-                    if (pianoCountOnShowRoom < orderInstrumentCount) {
-                        if (pianoCountOnShowRoom + stock.getPianoCount() < orderInstrumentCount) {
-                            throw new NegativeValueException();
-                        } else {
-                            stock.setPianoCount(stock.getPianoCount() - orderInstrumentCount + pianoCountOnShowRoom);
-                            pianoCountOnShowRoom = 0;
-                        }
-                    } else {
-                        pianoCountOnShowRoom = pianoCountOnShowRoom - orderInstrumentCount;
-                    }
-
+                    updateBalance(MusicalInstruments.INSTRUMENT_PIANO_NAME);
                     iterator.remove();
                     break;
 
                 case MusicalInstruments.INSTRUMENT_TRUMPET_NAME:
                     orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
-
-                    if (trumpetCountOnShowRoom < orderInstrumentCount) {
-                        if (trumpetCountOnShowRoom + stock.getTrumpetCount() < orderInstrumentCount) {
-                            throw new NegativeValueException();
-                        } else {
-                            stock.setTrumpetCount(stock.getTrumpetCount() - orderInstrumentCount + trumpetCountOnShowRoom);
-                            trumpetCountOnShowRoom = 0;
-                        }
-                    } else {
-                        trumpetCountOnShowRoom = trumpetCountOnShowRoom - orderInstrumentCount;
-                    }
-
+                    updateBalance(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
                     iterator.remove();
                     break;
             }
         }
 
-        System.out.println("You have " + guitarCountOnShowRoom + " Guitars, "
-                + pianoCountOnShowRoom + " Pianos, "
-                + trumpetCountOnShowRoom + " Trumpets on showRoom");
+        System.out.println("You have " + showRoomMap.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) + " Guitars, "
+                + showRoomMap.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) + " Pianos, "
+                + showRoomMap.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) + " Trumpets on showRoom");
 
-        System.out.println("You have " + stock.getGuitarCount() + " Guitars, "
-                + stock.getPianoCount() + " Pianos, "
-                + stock.getTrumpetCount() + " Trumpets on Stock");
+        System.out.println("You have " + stock.stockMap.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) + " Guitars, "
+                + stock.stockMap.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) + " Pianos, "
+                + stock.stockMap.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) + " Trumpets on Stock");
         System.out.println();
 
         return output;
     }
 
-    public int getGuitarCountOnShowRoom() {
-        return guitarCountOnShowRoom;
-    }
-
-    public void setGuitarCountOnShowRoom(int guitarCountOnShowRoom) {
-        this.guitarCountOnShowRoom = guitarCountOnShowRoom;
-    }
-
-    public int getPianoCountOnShowRoom() {
-        return pianoCountOnShowRoom;
-    }
-
-    public void setPianoCountOnShowRoom(int pianoCountOnShowRoom) {
-        this.pianoCountOnShowRoom = pianoCountOnShowRoom;
-    }
-
-    public int getTrumpetCountOnShowRoom() {
-        return trumpetCountOnShowRoom;
-    }
-
-    public void setTrumpetCountOnShowRoom(int trumpetCountOnShowRoom) {
-        this.trumpetCountOnShowRoom = trumpetCountOnShowRoom;
-    }
-
-    public int getOrderInstrumentCount() {
-        return orderInstrumentCount;
-    }
-
-    public void setOrderInstrumentCount(int orderInstrumentCount) {
-        this.orderInstrumentCount = orderInstrumentCount;
-    }
 }

@@ -1,42 +1,23 @@
 package com.goit.gojavaonline.module6.hw3;
 
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * Created by ANTON on 01.06.2016.
  */
 public class Stock {
-    private int guitarCount;
-    private int pianoCount;
-    private int trumpetCount;
+
+    Map<String, Integer> stockMap = new HashMap<>();
 
     public Stock(int guitarCount, int pianoCount, int trumpetCount) {
-        this.guitarCount = guitarCount;
-        this.trumpetCount = trumpetCount;
-        this.pianoCount = pianoCount;
-    }
+        int guitarCount1 = guitarCount;
+        int trumpetCount1 = trumpetCount;
+        int pianoCount1 = pianoCount;
 
-    public int getGuitarCount() {
-        return guitarCount;
-    }
-
-    public void setGuitarCount(int guitarCount) {
-        this.guitarCount = guitarCount;
-    }
-
-    public int getTrumpetCount() {
-        return trumpetCount;
-    }
-
-    public void setTrumpetCount(int trumpetCount) {
-        this.trumpetCount = trumpetCount;
-    }
-
-    public int getPianoCount() {
-        return pianoCount;
-    }
-
-    public void setPianoCount(int pianoCount) {
-        this.pianoCount = pianoCount;
+        stockMap.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, guitarCount);
+        stockMap.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, pianoCount);
+        stockMap.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, trumpetCount);
     }
 }

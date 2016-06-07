@@ -10,8 +10,9 @@ public class PerHourEmployee extends Employee {
     private double hourRate;
 
     public PerHourEmployee(String name, double hourRate) {
+        super(name);
         this.hourRate = hourRate;
-        this.name = name;
+        
     }
 
     public static final double AVE_DAYS_IN_MONTH = 20.8;

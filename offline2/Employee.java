@@ -8,6 +8,10 @@ public abstract class Employee {
     protected double avSalary;
     protected String name;
 
+    public Employee(String name) {
+        this.name = name;
+    }
+
     abstract double avSalaryCalc();
 
 }

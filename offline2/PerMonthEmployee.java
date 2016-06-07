@@ -6,7 +6,7 @@ package com.goit.gojavaonline.offline2;
 public class PerMonthEmployee extends Employee {
 
     public PerMonthEmployee(String name, double avSalary) {
-        this.name = name;
+        super(name);
         this.avSalary = avSalary;
     }
 

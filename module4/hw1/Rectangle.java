@@ -12,7 +12,7 @@ public class Rectangle extends Figure{
         this.sideA = sideA;
         this.sideB = sideB;
     }
-
+    @Override
     public double calcArea(){
         return sideA * sideB;
     }

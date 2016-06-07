@@ -24,22 +24,6 @@ public class MusicInstrumentShop {
         this.trumpetCountOnShowRoom = trumpetCountOnShowRoom;
     }
 
-    public void updateBalanceOnStock(String instrument) {
-        switch (instrument) {
-            case MusicalInstruments.INSTRUMENT_TRUMPET_NAME:
-                stock.setTrumpetCount(stock.getTrumpetCount() - orderInstrumentCount + trumpetCountOnShowRoom);
-                trumpetCountOnShowRoom = 0;
-                break;
-            case MusicalInstruments.INSTRUMENT_PIANO_NAME:
-                stock.setPianoCount(stock.getPianoCount() - orderInstrumentCount + pianoCountOnShowRoom);
-                pianoCountOnShowRoom = 0;
-                break;
-            case MusicalInstruments.INSTRUMENT_GUITAR_NAME:
-                stock.setGuitarCount(stock.getGuitarCount() - orderInstrumentCount + guitarCountOnShowRoom);
-                guitarCountOnShowRoom = 0;
-        }
-    }
-
     public List<MusicalInstruments> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
         List<MusicalInstruments> output = new ArrayList<MusicalInstruments>();
 
@@ -56,7 +40,8 @@ public class MusicInstrumentShop {
                         if (guitarCountOnShowRoom + stock.getGuitarCount() < orderInstrumentCount) {
                             throw new NegativeValueException();
                         } else {
-                            updateBalanceOnStock(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
+                            stock.setGuitarCount(stock.getGuitarCount() - orderInstrumentCount + guitarCountOnShowRoom);
+                            guitarCountOnShowRoom = 0;
                         }
                     } else {
                         guitarCountOnShowRoom = guitarCountOnShowRoom - orderInstrumentCount;
@@ -72,7 +57,8 @@ public class MusicInstrumentShop {
                         if (pianoCountOnShowRoom + stock.getPianoCount() < orderInstrumentCount) {
                             throw new NegativeValueException();
                         } else {
-                            updateBalanceOnStock(MusicalInstruments.INSTRUMENT_PIANO_NAME);
+                            stock.setPianoCount(stock.getPianoCount() - orderInstrumentCount + pianoCountOnShowRoom);
+                            pianoCountOnShowRoom = 0;
                         }
                     } else {
                         pianoCountOnShowRoom = pianoCountOnShowRoom - orderInstrumentCount;
@@ -88,7 +74,8 @@ public class MusicInstrumentShop {
                         if (trumpetCountOnShowRoom + stock.getTrumpetCount() < orderInstrumentCount) {
                             throw new NegativeValueException();
                         } else {
-                            updateBalanceOnStock(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
+                            stock.setTrumpetCount(stock.getTrumpetCount() - orderInstrumentCount + trumpetCountOnShowRoom);
+                            trumpetCountOnShowRoom = 0;
                         }
                     } else {
                         trumpetCountOnShowRoom = trumpetCountOnShowRoom - orderInstrumentCount;

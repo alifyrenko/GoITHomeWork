@@ -16,8 +16,8 @@ public class Stock {
         int trumpetCount1 = trumpetCount;
         int pianoCount1 = pianoCount;
 
-        stockMap.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, guitarCount);
-        stockMap.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, pianoCount);
-        stockMap.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, trumpetCount);
+        stockMap.put(MusicalInstrument.INSTRUMENT_GUITAR_NAME, guitarCount);
+        stockMap.put(MusicalInstrument.INSTRUMENT_PIANO_NAME, pianoCount);
+        stockMap.put(MusicalInstrument.INSTRUMENT_TRUMPET_NAME, trumpetCount);
     }
 }

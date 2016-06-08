@@ -9,7 +9,7 @@ public class MusicInstrumentShop {
 
     private int orderInstrumentCount = 0;
     Stock stock = new Stock(5, 5, 5);
-    private List<MusicalInstruments> musicalInstrumentsList;
+    private List<MusicalInstrument> musicalInstrumentList;
     Map<String, Integer> showRoomMap = new HashMap<>();
 
     public MusicInstrumentShop(int guitarCountOnShowRoom, int pianoCountOnShowRoom, int trumpetCountOnShowRoom) {
@@ -17,9 +17,9 @@ public class MusicInstrumentShop {
         int pianoCountOnShowRoom1 = pianoCountOnShowRoom;
         int trumpetCountOnShowRoom1 = trumpetCountOnShowRoom;
 
-        showRoomMap.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, guitarCountOnShowRoom);
-        showRoomMap.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, pianoCountOnShowRoom);
-        showRoomMap.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, trumpetCountOnShowRoom);
+        showRoomMap.put(MusicalInstrument.INSTRUMENT_GUITAR_NAME, guitarCountOnShowRoom);
+        showRoomMap.put(MusicalInstrument.INSTRUMENT_PIANO_NAME, pianoCountOnShowRoom);
+        showRoomMap.put(MusicalInstrument.INSTRUMENT_TRUMPET_NAME, trumpetCountOnShowRoom);
     }
 
     public void updateBalance(String product) throws NegativeValueException {
@@ -42,8 +42,8 @@ public class MusicInstrumentShop {
         }
     }
 
-    public List<MusicalInstruments> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
-        List<MusicalInstruments> output = new ArrayList<MusicalInstruments>();
+    public List<MusicalInstrument> prepareInstruments(Map<String, Integer> order) throws NegativeValueException {
+        List<MusicalInstrument> output = new ArrayList<>();
 
         Set<String> instruments = order.keySet();
         Iterator<String> iterator = instruments.iterator();
@@ -51,33 +51,36 @@ public class MusicInstrumentShop {
         while (iterator.hasNext()) {
 
             switch (iterator.next()) {
-                case MusicalInstruments.INSTRUMENT_GUITAR_NAME:
-                    orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
-                    updateBalance(MusicalInstruments.INSTRUMENT_GUITAR_NAME);
+                case MusicalInstrument.INSTRUMENT_GUITAR_NAME:
+                    orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_GUITAR_NAME);
+                    updateBalance(MusicalInstrument.INSTRUMENT_GUITAR_NAME);
+                    output.add(new Guitar());
                     iterator.remove();
                     break;
 
-                case MusicalInstruments.INSTRUMENT_PIANO_NAME:
-                    orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_PIANO_NAME);
-                    updateBalance(MusicalInstruments.INSTRUMENT_PIANO_NAME);
+                case MusicalInstrument.INSTRUMENT_PIANO_NAME:
+                    orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_PIANO_NAME);
+                    updateBalance(MusicalInstrument.INSTRUMENT_PIANO_NAME);
+                    output.add(new Piano());
                     iterator.remove();
                     break;
 
-                case MusicalInstruments.INSTRUMENT_TRUMPET_NAME:
-                    orderInstrumentCount = order.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
-                    updateBalance(MusicalInstruments.INSTRUMENT_TRUMPET_NAME);
+                case MusicalInstrument.INSTRUMENT_TRUMPET_NAME:
+                    orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_TRUMPET_NAME);
+                    updateBalance(MusicalInstrument.INSTRUMENT_TRUMPET_NAME);
+                    output.add(new Trumpet());
                     iterator.remove();
                     break;
             }
         }
 
-        System.out.println("You have " + showRoomMap.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) + " Guitars, "
-                + showRoomMap.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) + " Pianos, "
-                + showRoomMap.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) + " Trumpets on showRoom");
+        System.out.println("You have " + showRoomMap.get(MusicalInstrument.INSTRUMENT_GUITAR_NAME) + " Guitars, "
+                + showRoomMap.get(MusicalInstrument.INSTRUMENT_PIANO_NAME) + " Pianos, "
+                + showRoomMap.get(MusicalInstrument.INSTRUMENT_TRUMPET_NAME) + " Trumpets on showRoom");
 
-        System.out.println("You have " + stock.stockMap.get(MusicalInstruments.INSTRUMENT_GUITAR_NAME) + " Guitars, "
-                + stock.stockMap.get(MusicalInstruments.INSTRUMENT_PIANO_NAME) + " Pianos, "
-                + stock.stockMap.get(MusicalInstruments.INSTRUMENT_TRUMPET_NAME) + " Trumpets on Stock");
+        System.out.println("You have " + stock.stockMap.get(MusicalInstrument.INSTRUMENT_GUITAR_NAME) + " Guitars, "
+                + stock.stockMap.get(MusicalInstrument.INSTRUMENT_PIANO_NAME) + " Pianos, "
+                + stock.stockMap.get(MusicalInstrument.INSTRUMENT_TRUMPET_NAME) + " Trumpets on Stock");
         System.out.println();
 
         return output;

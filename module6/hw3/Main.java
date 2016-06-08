@@ -1,7 +1,5 @@
 package com.goit.gojavaonline.module6.hw3;
 
-import com.goit.gojavaonline.module3.hw3.MusicalInstrument;
-
 import java.util.*;
 
 /**
@@ -14,21 +12,23 @@ public class Main {
 
         Map<String, Integer> order = new HashMap<>();
 
-        order.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, 1);
-        order.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, 10);
+        order.put(MusicalInstrument.INSTRUMENT_TRUMPET_NAME, 1);
+        order.put(MusicalInstrument.INSTRUMENT_GUITAR_NAME, 10);
 
         musicInstrumentShop.prepareInstruments(order);
 
-        order.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, 4);
-        order.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, 2);
+        order.put(MusicalInstrument.INSTRUMENT_PIANO_NAME, 4);
+        order.put(MusicalInstrument.INSTRUMENT_TRUMPET_NAME, 2);
 
         musicInstrumentShop.prepareInstruments(order);
 
-        order.put(MusicalInstruments.INSTRUMENT_PIANO_NAME, 3);
-        order.put(MusicalInstruments.INSTRUMENT_TRUMPET_NAME, 8);
-        order.put(MusicalInstruments.INSTRUMENT_GUITAR_NAME, 10);
+        order.put(MusicalInstrument.INSTRUMENT_PIANO_NAME, 3);
+        order.put(MusicalInstrument.INSTRUMENT_TRUMPET_NAME, 8);
+        order.put(MusicalInstrument.INSTRUMENT_GUITAR_NAME, 10);
 
         musicInstrumentShop.prepareInstruments(order);
+
+
 
     }
 }

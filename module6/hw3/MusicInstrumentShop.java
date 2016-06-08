@@ -54,21 +54,27 @@ public class MusicInstrumentShop {
                 case MusicalInstrument.INSTRUMENT_GUITAR_NAME:
                     orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_GUITAR_NAME);
                     updateBalance(MusicalInstrument.INSTRUMENT_GUITAR_NAME);
-                    output.add(new Guitar());
+                    for (int i = 0; i < orderInstrumentCount; i++) {
+                        output.add(new Guitar());
+                    }
                     iterator.remove();
                     break;
 
                 case MusicalInstrument.INSTRUMENT_PIANO_NAME:
                     orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_PIANO_NAME);
                     updateBalance(MusicalInstrument.INSTRUMENT_PIANO_NAME);
-                    output.add(new Piano());
+                    for (int i = 0; i < orderInstrumentCount; i++) {
+                        output.add(new Piano());
+                    }
                     iterator.remove();
                     break;
 
                 case MusicalInstrument.INSTRUMENT_TRUMPET_NAME:
                     orderInstrumentCount = order.get(MusicalInstrument.INSTRUMENT_TRUMPET_NAME);
                     updateBalance(MusicalInstrument.INSTRUMENT_TRUMPET_NAME);
-                    output.add(new Trumpet());
+                    for (int i = 0; i < orderInstrumentCount; i++) {
+                        output.add(new Trumpet());
+                    }
                     iterator.remove();
                     break;
             }

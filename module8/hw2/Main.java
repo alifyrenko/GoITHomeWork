@@ -8,6 +8,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+        Printer printer = new Printer();
         Set<MusicalInstrument> musicalInstrumentSet = new TreeSet<>(new CompareWeight());
 
         musicalInstrumentSet.add(new Piano("Piano", "Green", 200));
@@ -16,9 +17,8 @@ public class Main {
         musicalInstrumentSet.add(new Guitar("Electro Guitar", "White", 4));
         musicalInstrumentSet.add(new Guitar("Classic Guitar", "Gray", 2));
 
-        musicalInstrumentSet.stream().forEach(p -> System.out.println(p));
 
-        System.out.println();
+        printer.printList(musicalInstrumentSet);
 
         Set<MusicalInstrument> musicalInstrumentSet1 = new TreeSet<>(new CompareColor());
 
@@ -28,6 +28,16 @@ public class Main {
         musicalInstrumentSet1.add(new Guitar("Electro Guitar", "White", 4));
         musicalInstrumentSet1.add(new Guitar("Classic Guitar", "Gray", 2));
 
-        musicalInstrumentSet1.stream().forEach(p -> System.out.println(p));
+        printer.printList(musicalInstrumentSet1);
+
+        Set<MusicalInstrument> musicalInstrumentSet2 = new TreeSet<>(new CompareName());
+
+        musicalInstrumentSet2.add(new Piano("Piano", "Green", 200));
+        musicalInstrumentSet2.add(new Trumpet("Trumpet", "Yellow", 5));
+        musicalInstrumentSet2.add(new Guitar("Bass Guitar", "Black", 3));
+        musicalInstrumentSet2.add(new Guitar("Electro Guitar", "White", 4));
+        musicalInstrumentSet2.add(new Guitar("Classic Guitar", "Gray", 2));
+
+        printer.printList(musicalInstrumentSet2);
     }
 }

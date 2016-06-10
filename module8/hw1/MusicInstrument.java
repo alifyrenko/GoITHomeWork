@@ -18,9 +18,6 @@ public abstract class MusicInstrument {
 
     @Override
     public String toString() {
-        return "MusicInstrument{" +
-                "name='" + name + '\'' +
-                ", weight=" + weight +
-                '}';
+        return String.format("%-17s%-8s%-6d", name, color, weight);
     }
 }

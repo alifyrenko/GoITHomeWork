@@ -8,7 +8,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-
         Set<MusicalInstrument> musicalInstrumentSet = new TreeSet<>(new CompareWeight());
 
         musicalInstrumentSet.add(new Piano("Piano", "Green", 200));

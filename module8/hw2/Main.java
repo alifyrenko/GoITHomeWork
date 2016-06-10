@@ -8,8 +8,11 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+
         Printer printer = new Printer();
         Set<MusicalInstrument> musicalInstrumentSet = new TreeSet<>(new CompareWeight());
+
+        System.out.println("Sorted by weight");
 
         musicalInstrumentSet.add(new Piano("Piano", "Green", 200));
         musicalInstrumentSet.add(new Trumpet("Trumpet", "Yellow", 5));
@@ -22,6 +25,8 @@ public class Main {
 
         Set<MusicalInstrument> musicalInstrumentSet1 = new TreeSet<>(new CompareColor());
 
+        System.out.println("Sorted by Color");
+
         musicalInstrumentSet1.add(new Piano("Piano", "Green", 200));
         musicalInstrumentSet1.add(new Trumpet("Trumpet", "Yellow", 5));
         musicalInstrumentSet1.add(new Guitar("Bass Guitar", "Black", 3));
@@ -31,6 +36,8 @@ public class Main {
         printer.printList(musicalInstrumentSet1);
 
         Set<MusicalInstrument> musicalInstrumentSet2 = new TreeSet<>(new CompareName());
+
+        System.out.println("Sorted by Name");
 
         musicalInstrumentSet2.add(new Piano("Piano", "Green", 200));
         musicalInstrumentSet2.add(new Trumpet("Trumpet", "Yellow", 5));

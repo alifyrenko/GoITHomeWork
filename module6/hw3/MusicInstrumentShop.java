@@ -24,6 +24,7 @@ public class MusicInstrumentShop {
 
     public void updateBalance(String product) throws NegativeValueException {
 
+
         int currInstrumentCountShowRoom = showRoomMap.get(product);
         int currInstrumentCountStock = stock.stockMap.get(product);
         int totalInstrumentsCount = currInstrumentCountShowRoom + currInstrumentCountStock;

@@ -33,6 +33,5 @@ public class Runner {
         musicInstrumentSet.add(new Guitar(Instruments.TRUMPET, Color.GRAY, 2));
 
         printer.printList(musicInstrumentSet);
-
     }
 }

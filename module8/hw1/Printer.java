@@ -12,17 +12,14 @@ import java.util.List;
  */
 public class Printer {
 
-
     public void printList (Collection<MusicInstrument> musicalInstrumentList){
 
         System.out.printf("%-17s%-8s%-6s", "Instrument Name", "Color", "Weight");
         System.out.println();
         System.out.println("------------------------------");
+
         musicalInstrumentList
                 .stream()
                 .forEach(p -> System.out.println(p));
     }
-
-
-
 }

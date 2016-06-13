@@ -5,7 +5,7 @@ package com.goit.gojavaonline.module8.hw2;
  */
 public class Guitar extends MusicalInstrument {
 
-    public Guitar(String name, String color, int weight) {
+    public Guitar(Instruments name, Color color, int weight) {
         super(name, color, weight);
     }
 

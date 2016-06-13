@@ -5,7 +5,7 @@ package com.goit.gojavaonline.module8.hw2;
  */
 public class Trumpet extends MusicalInstrument {
 
-    public Trumpet(String name, String color, int weight) {
+    public Trumpet(Instruments name, Color color, int weight) {
         super(name, color, weight);
     }
 

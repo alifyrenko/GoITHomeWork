@@ -10,41 +10,41 @@ public class Main {
 
 
         Printer printer = new Printer();
-        Set<MusicalInstrument> musicalInstrumentSet = new TreeSet<>(new CompareWeight());
+        Set<MusicalInstrument> musicInstrSetSortByWeight = new TreeSet<>(new CompareWeight());
 
         System.out.println("Sorted by weight");
 
-        musicalInstrumentSet.add(new Piano("Piano", "Green", 200));
-        musicalInstrumentSet.add(new Trumpet("Trumpet", "Yellow", 5));
-        musicalInstrumentSet.add(new Guitar("Bass Guitar", "Black", 3));
-        musicalInstrumentSet.add(new Guitar("Electro Guitar", "White", 4));
-        musicalInstrumentSet.add(new Guitar("Classic Guitar", "Gray", 2));
+        musicInstrSetSortByWeight.add(new Piano(Instruments.PIANO, Color.BLACK, 200));
+        musicInstrSetSortByWeight.add(new Trumpet(Instruments.TRUMPET, Color.GRAY, 5));
+        musicInstrSetSortByWeight.add(new Guitar(Instruments.BASS_GUITAR, Color.GREEN, 6));
+        musicInstrSetSortByWeight.add(new Guitar(Instruments.ELECTRO_GUITAR, Color.WHITE, 4));
+        musicInstrSetSortByWeight.add(new Guitar(Instruments.CLASSIC_GUITAR, Color.YELLOW, 6));
 
 
-        printer.printList(musicalInstrumentSet);
+        printer.printList(musicInstrSetSortByWeight);
 
-        Set<MusicalInstrument> musicalInstrumentSet1 = new TreeSet<>(new CompareColor());
+        Set<MusicalInstrument> musicInstrSetSortByColor = new TreeSet<>(new CompareColor());
 
         System.out.println("Sorted by Color");
 
-        musicalInstrumentSet1.add(new Piano("Piano", "Green", 200));
-        musicalInstrumentSet1.add(new Trumpet("Trumpet", "Yellow", 5));
-        musicalInstrumentSet1.add(new Guitar("Bass Guitar", "Black", 3));
-        musicalInstrumentSet1.add(new Guitar("Electro Guitar", "White", 4));
-        musicalInstrumentSet1.add(new Guitar("Classic Guitar", "Gray", 2));
+        musicInstrSetSortByColor.add(new Piano(Instruments.PIANO, Color.BLACK, 200));
+        musicInstrSetSortByColor.add(new Trumpet(Instruments.TRUMPET, Color.GRAY, 5));
+        musicInstrSetSortByColor.add(new Guitar(Instruments.BASS_GUITAR, Color.GREEN, 3));
+        musicInstrSetSortByColor.add(new Guitar(Instruments.ELECTRO_GUITAR, Color.WHITE, 4));
+        musicInstrSetSortByColor.add(new Guitar(Instruments.CLASSIC_GUITAR, Color.YELLOW, 2));
 
-        printer.printList(musicalInstrumentSet1);
+        printer.printList(musicInstrSetSortByColor);
 
-        Set<MusicalInstrument> musicalInstrumentSet2 = new TreeSet<>(new CompareName());
+        Set<MusicalInstrument> musicInstrSetSortByName = new TreeSet<>(new CompareName());
 
         System.out.println("Sorted by Name");
 
-        musicalInstrumentSet2.add(new Piano("Piano", "Green", 200));
-        musicalInstrumentSet2.add(new Trumpet("Trumpet", "Yellow", 5));
-        musicalInstrumentSet2.add(new Guitar("Bass Guitar", "Black", 3));
-        musicalInstrumentSet2.add(new Guitar("Electro Guitar", "White", 4));
-        musicalInstrumentSet2.add(new Guitar("Classic Guitar", "Gray", 2));
+        musicInstrSetSortByName.add(new Piano(Instruments.PIANO, Color.BLACK, 200));
+        musicInstrSetSortByName.add(new Trumpet(Instruments.TRUMPET, Color.GRAY, 5));
+        musicInstrSetSortByName.add(new Guitar(Instruments.BASS_GUITAR, Color.GREEN, 3));
+        musicInstrSetSortByName.add(new Guitar(Instruments.ELECTRO_GUITAR, Color.WHITE, 4));
+        musicInstrSetSortByName.add(new Guitar(Instruments.CLASSIC_GUITAR, Color.YELLOW, 2));
 
-        printer.printList(musicalInstrumentSet2);
+        printer.printList(musicInstrSetSortByName);
     }
 }

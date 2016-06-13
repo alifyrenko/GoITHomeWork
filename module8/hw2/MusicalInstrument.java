@@ -5,11 +5,11 @@ package com.goit.gojavaonline.module8.hw2;
  */
 public abstract class MusicalInstrument {
 
-    private String name;
-    private String color;
+    private Instruments name;
+    private Color color;
     private int weight;
 
-    public MusicalInstrument(String name, String color, int weight) {
+    public MusicalInstrument(Instruments name, Color color, int weight) {
         this.name = name;
         this.color = color;
         this.weight = weight;
@@ -17,19 +17,19 @@ public abstract class MusicalInstrument {
 
     public abstract void play();
 
-    public String getName() {
+    public Instruments getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Instruments name) {
         this.name = name;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

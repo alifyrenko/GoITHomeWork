@@ -5,7 +5,7 @@ package com.goit.gojavaonline.module8.hw2;
  */
 public class Piano extends MusicalInstrument {
 
-    public Piano(String name, String color, int weight) {
+    public Piano(Instruments name, Color color, int weight) {
         super(name, color, weight);
     }
 

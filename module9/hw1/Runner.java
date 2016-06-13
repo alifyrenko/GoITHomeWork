@@ -10,20 +10,18 @@ import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
 
-        int cipher;
-        List<String> stringList = new ArrayList<>();
+        List<String> listToCipher = new ArrayList<>();
 
-        stringList.add("Audio File");
-        stringList.add("Directory");
-        stringList.add("File");
-        stringList.add("Image File");
-        stringList.add("Text File");
+        listToCipher.add("Audio File");
+        listToCipher.add("Directory");
+        listToCipher.add("File");
+        listToCipher.add("Image File");
+        listToCipher.add("Text File");
 
-        List<String> encodeList = CaesarCipher.cipher(stringList);
+        List<String> encodedList = CaesarCipher.cipher(listToCipher);
 
         System.out.println();
 
-        CaesarCipher.cipher(encodeList);
-
+        CaesarCipher.cipher(encodedList);
     }
 }

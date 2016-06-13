@@ -1,14 +1,17 @@
 package com.goit.gojavaonline.module8.hw1;
 
+import com.goit.gojavaonline.module8.hw2.Color;
+import com.goit.gojavaonline.module8.hw2.Instruments;
+
 /**
  * Created by ANTON on 07.06.2016.
  */
 public abstract class MusicInstrument {
-    String name;
-    String color;
+    Instruments name;
+    Color color;
     int weight;
 
-    public MusicInstrument(String name, String color, int weight) {
+    public MusicInstrument(Instruments name, Color color, int weight) {
         this.name = name;
         this.color = color;
         this.weight = weight;

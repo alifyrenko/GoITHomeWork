@@ -1,11 +1,14 @@
 package com.goit.gojavaonline.module8.hw1;
 
+import com.goit.gojavaonline.module8.hw2.Color;
+import com.goit.gojavaonline.module8.hw2.Instruments;
+
 /**
  * Created by ANTON on 07.06.2016.
  */
 public class Piano extends MusicInstrument {
 
-    public Piano(String name, String color, int weight) {
+    public Piano(Instruments name, Color color, int weight) {
         super(name, color, weight);
     }
 

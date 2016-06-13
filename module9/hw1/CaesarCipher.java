@@ -69,7 +69,7 @@ public class CaesarCipher {
             }
             cipheredList.add(new String(arrayToCipher));
         }
-        
+
         if (cipher == 1) {
             System.out.println("Result of encoding you can find below:");
         } else {

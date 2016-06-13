@@ -1,16 +1,21 @@
 package com.goit.gojavaonline.module9.hw1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ANTON on 12.06.2016.
  */
 public class CaesarCipher {
 
-    public static List<String> cipher(List<String> list, String cipher) {
+    public static List<String> cipher(List<String> list) {
+
+        int cipher;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("If you want to encode message - enter '1'");
+        System.out.println("If you want to decode message - enter '2'");
+
+        cipher = scanner.nextInt();
 
         for (int i = 0; i < list.size(); i++) {
             list.set(i, new String(list.get(i)).toLowerCase());
@@ -18,8 +23,8 @@ public class CaesarCipher {
 
         List<String> cipheredList = new ArrayList<>();
 
-        int numOfValueInAlphabet;
-        int numCipherValue = 0;
+        int indexOfValueInAlphabet;
+        int indexOfCipherValue = 0;
         final int SHIFT_NUMBER_FOR_CIPHER = 7;
         final int AMOUNT_OF_VALUES_IN_ALPHABET = 26;
 
@@ -45,24 +50,29 @@ public class CaesarCipher {
                     counter++;
                 }
 
-                numOfValueInAlphabet = alphabetMap.get(arrayToCipher[counter]);
+                indexOfValueInAlphabet = alphabetMap.get(arrayToCipher[counter]);
 
-                if (cipher == "decode") {
-                    numCipherValue = numOfValueInAlphabet - SHIFT_NUMBER_FOR_CIPHER;
-                    if (numCipherValue < 0) {
-                        numCipherValue += AMOUNT_OF_VALUES_IN_ALPHABET;
+                if (cipher == 2) {
+                    indexOfCipherValue = indexOfValueInAlphabet - SHIFT_NUMBER_FOR_CIPHER;
+                    if (indexOfCipherValue < 0) {
+                        indexOfCipherValue += AMOUNT_OF_VALUES_IN_ALPHABET;
                     }
-                } else if (cipher == "encode") {
-                    numCipherValue = (numOfValueInAlphabet + SHIFT_NUMBER_FOR_CIPHER) % AMOUNT_OF_VALUES_IN_ALPHABET;
+                } else if (cipher == 1) {
+                    indexOfCipherValue = (indexOfValueInAlphabet + SHIFT_NUMBER_FOR_CIPHER) % AMOUNT_OF_VALUES_IN_ALPHABET;
                 } else {
-                    System.out.println("You should choose only 'encode' or 'decode'");
+                    System.out.println("You should choose only 1('encode') or 2('decode')");
                     System.exit(0);
                 }
 
-                arrayToCipher[counter] = alphabetArray[numCipherValue];
+                arrayToCipher[counter] = alphabetArray[indexOfCipherValue];
             }
             cipheredList.add(new String(arrayToCipher));
         }
+
+        cipheredList
+                .stream()
+                .forEach(p -> System.out.println(p));
+
         return cipheredList;
     }
 }

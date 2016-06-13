@@ -69,6 +69,14 @@ public class CaesarCipher {
             cipheredList.add(new String(arrayToCipher));
         }
 
+
+        if (cipher == 1) {
+            System.out.println("Result of encoding you can find below:");
+        } else {
+            System.out.println("Result of decoding you can find below:");
+        }
+
+        System.out.println("-------------------------");
         cipheredList
                 .stream()
                 .forEach(p -> System.out.println(p));

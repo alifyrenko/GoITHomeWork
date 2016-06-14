@@ -19,7 +19,7 @@ public class Cipher {
                 counter++;
             }
 
-            indexOfValueInAlphabet = Alphabet.getNumOfValueInAlphabet(arrayToCipher[counter]);
+            indexOfValueInAlphabet = Alphabet.getIndexInAlphabetByLetter(arrayToCipher[counter]);
 
             if (cipher == 2) {
                 indexOfCipherValue = indexOfValueInAlphabet - SHIFT_NUMBER_FOR_CIPHER;

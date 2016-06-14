@@ -19,7 +19,7 @@ public class Alphabet {
         return alphabetArray[index];
     }
 
-    public static int getNumOfValueInAlphabet (char letter) {
+    public static int getIndexInAlphabetByLetter(char letter) {
         Map<Character, Integer> alphabetMap = new HashMap<>();
         int valueOfMap = 0;
         for (char letterOfAlphabet = 'a'; letterOfAlphabet <= 'z'; letterOfAlphabet++, valueOfMap++) {

@@ -20,7 +20,8 @@ public class Alphabet {
     }
 
     public static int getIndexInAlphabetByLetter(char letter) {
-        Map<Character, Integer> alphabetMap = new HashMap<>();
+        letter = Character.toLowerCase(letter);
+        Map <Character, Integer> alphabetMap = new HashMap<>();
         int valueOfMap = 0;
         for (char letterOfAlphabet = 'a'; letterOfAlphabet <= 'z'; letterOfAlphabet++, valueOfMap++) {
             alphabetMap.put(letterOfAlphabet, valueOfMap);

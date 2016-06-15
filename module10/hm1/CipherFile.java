@@ -22,7 +22,7 @@ public class CipherFile {
                 indexOfValueInAlphabet = Alphabet.getIndexInAlphabetByLetter(((char) count));
                 indexOfCipherValue = (indexOfValueInAlphabet + SHIFT_NUMBER_FOR_CIPHER) % Alphabet.AMOUNT_OF_VALUES_IN_ALPHABET;
                 count = Alphabet.getLetterInAlphabetByIndex(indexOfCipherValue);
-            } catch (NullPointerException ignore) {/*ignore*/}
+            } catch (NullPointerException ignore) {/*ignore special symbols like*/}
             out.write(count);
         }
     }

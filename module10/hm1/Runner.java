@@ -23,7 +23,7 @@ public class Runner {
 
         } catch (IOException e) {
             throw new IOException("Exception, when copy file from '" + inputFilePath + "' into '" + outputFilePath + "'", e);
-            
+
         } finally {
             CipherFile.closeQuietly(reader);
             CipherFile.closeAndFlushQuietly(writer);

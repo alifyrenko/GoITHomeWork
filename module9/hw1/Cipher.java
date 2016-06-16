@@ -7,6 +7,8 @@ public class Cipher {
 
     public static final int AMOUNT_OF_VALUES_IN_ALPHABET = 26;
     public static final int SHIFT_NUMBER_FOR_CIPHER = 7;
+    public static final int ENCODE = 1;
+    public static final int DECODE = 2;
 
     public static String makeArrayCipheredUnCiphered (char[] arrayToCipher, int cipher) {
 
@@ -21,13 +23,13 @@ public class Cipher {
 
             indexOfValueInAlphabet = Alphabet.getIndexInAlphabetByLetter(arrayToCipher[counter]);
 
-            if (cipher == 2) {
+            if (cipher == DECODE) {
                 indexOfCipherValue = indexOfValueInAlphabet - SHIFT_NUMBER_FOR_CIPHER;
                 if (indexOfCipherValue < 0) {
                     indexOfCipherValue += AMOUNT_OF_VALUES_IN_ALPHABET;
                 }
 
-            } else if (cipher == 1) {
+            } else if (cipher == ENCODE) {
                 indexOfCipherValue = (indexOfValueInAlphabet + SHIFT_NUMBER_FOR_CIPHER) % AMOUNT_OF_VALUES_IN_ALPHABET;
 
             } else {

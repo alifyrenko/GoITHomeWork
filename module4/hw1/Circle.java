@@ -7,12 +7,16 @@ public class Circle extends Figure {
 
     private int radius;
 
-    Circle (int radius) {
+    public Circle(int radius) {
         this.radius = radius;
     }
 
     public double calcArea(){
-        return Math.PI * Math.pow(radius,2);
+
+        if (radius <= 0){
+            throw new ArithmeticException("Radius should be >=0!");
+        }
+        return Math.PI * Math.pow(this.radius,2);
     }
 
     public int getRadius() {

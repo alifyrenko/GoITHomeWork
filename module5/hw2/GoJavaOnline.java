@@ -29,30 +29,20 @@ public class GoJavaOnline {
             return;
         }
 
-        double[] arrayList = new double[numOfValuesOfArrayList];
+        int[] arrayList = new int[numOfValuesOfArrayList];
 
         for (int i = 0; i < numOfValuesOfArrayList; i++) {
             System.out.println("Please, enter " + (i + 1) + " of " + numOfValuesOfArrayList + " value of your array");
-            arrayList[i] = scanner.nextDouble();
+            arrayList[i] = scanner.nextInt();
         }
 
-        boolean swapOccurred = true;
+        SortArray sortArray = new SortArray();
 
-        while (swapOccurred) {
-            swapOccurred = false;
-            for (int i = 0; i < arrayList.length - 1; i++) {
-                if (arrayList[i] > arrayList[i + 1]) {
-                    double tempValue = arrayList[i];
-                    arrayList[i] = arrayList[i + 1];
-                    arrayList[i + 1] = tempValue;
+        sortArray.sort(arrayList);
 
-                    swapOccurred = true;
-                }
-            }
-        }
 
         System.out.println("Below you can find your sorted array list:");
-        for (double arrayListPrint : arrayList) {
+        for (int arrayListPrint : arrayList) {
             System.out.println(arrayListPrint);
         }
 

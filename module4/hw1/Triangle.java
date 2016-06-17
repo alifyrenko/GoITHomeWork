@@ -1,7 +1,5 @@
 package com.goit.gojavaonline.module4.hw1;
 
-import java.util.IllegalFormatException;
-
 /**
  * Created by ANTON on 26.05.2016.
  */
@@ -13,7 +11,7 @@ public class Triangle extends Figure {
     private int sideC;
 
 
-    Triangle(int sideA, int sideB, int sideC) {
+    public Triangle(int sideA, int sideB, int sideC) {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
@@ -23,7 +21,7 @@ public class Triangle extends Figure {
     public double calcArea() {
         double result = 0;
         if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
-            System.out.println("Some of numbers are negative");
+            throw new ArithmeticException ("Some of sides <= 0");
         } else {
             int halfPerimeter = (sideA + sideB + sideC) / 2;
             result = Math.sqrt(halfPerimeter * ((halfPerimeter - sideA) * (halfPerimeter - sideB) * (halfPerimeter - sideC)));

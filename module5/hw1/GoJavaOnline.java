@@ -11,10 +11,10 @@ import java.util.Scanner;
 public class GoJavaOnline {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        int minValue = 0;
-        int maxValue = 0;
+        MaxValueOfArray maxValueOfArray = new MaxValueOfArray();
+        MinValueOfArray minValueOfArray = new MinValueOfArray();
 
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter number of values of your arrayList");
 
         int numOfValuesOfArrayList = scanner.nextInt();
@@ -25,17 +25,10 @@ public class GoJavaOnline {
             arrayList[i] = scanner.nextInt();
         }
 
-        for (int i = 0; i < arrayList.length; i++) {
-            if (i == 0) {
-                minValue = arrayList[0];
-                maxValue = arrayList[0];
-            }
-            if (arrayList[i] < minValue) {
-                minValue = arrayList[i];
-            } else if (arrayList[i] > maxValue) {
-                maxValue = arrayList[i];
-            }
-        }
+
+        int maxValue = maxValueOfArray.getMaxValueOfArray(arrayList);
+        int minValue = minValueOfArray.getMinValueOfArray(arrayList);
+
         System.out.println("Minimum of the array is " + minValue);
         System.out.println("Maximum of the array is " + maxValue);
     }

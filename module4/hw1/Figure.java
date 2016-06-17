@@ -5,5 +5,5 @@ package com.goit.gojavaonline.module4.hw1;
  */
 abstract class Figure {
 
-    abstract double calcArea();
+    public abstract double calcArea();
 }

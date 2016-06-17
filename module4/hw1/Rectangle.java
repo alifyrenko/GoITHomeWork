@@ -8,12 +8,16 @@ public class Rectangle extends Figure{
     private int sideA;
     private int sideB;
 
-    Rectangle (int sideA, int sideB){
+    public Rectangle(int sideA, int sideB){
         this.sideA = sideA;
         this.sideB = sideB;
     }
-    @Override
+
     public double calcArea(){
+
+        if(sideA <=0 || sideB <=0) {
+            throw new ArithmeticException("Some of the sides < = 0!");
+        }
         return sideA * sideB;
     }
 

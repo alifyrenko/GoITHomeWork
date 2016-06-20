@@ -1,6 +1,5 @@
 package com.goit.gojavaonline.module8.hw1;
 
-import com.goit.gojavaonline.module7.Object1;
 import com.goit.gojavaonline.module8.hw2.Color;
 import com.goit.gojavaonline.module8.hw2.Instruments;
 

@@ -17,9 +17,8 @@ public class CaesarCipherMethod {
         List<String> cipheredList = new ArrayList<>();
 
         for (int i = 0; i < listToCipher.size(); i++) {
-            String cipheredWord;
             char[] arrayToCipher = listToCipher.get(i).toCharArray();
-            cipheredWord = Cipher.makeArrayCipheredUnCiphered(arrayToCipher, cipher);
+            String cipheredWord = Cipher.makeArrayCipheredUnCiphered(arrayToCipher, cipher);
             cipheredList.add(cipheredWord);
         }
 

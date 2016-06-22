@@ -13,8 +13,8 @@ public class Alphabet {
     public static char getLetterInAlphabetByIndex(int index) {
         int indexOFArray = 0;
         char[] alphabetArray = new char[AMOUNT_OF_VALUES_IN_ALPHABET];
-        for (char letterOfAlphabet = 'a'; letterOfAlphabet <= 'z'; letterOfAlphabet++, indexOFArray++) {
-            alphabetArray[indexOFArray] = letterOfAlphabet;
+        for (char i = 'a'; i <= 'z'; i++, indexOFArray++) {
+            alphabetArray[indexOFArray] = i;
         }
         return alphabetArray[index];
     }
@@ -23,8 +23,8 @@ public class Alphabet {
         letter = Character.toLowerCase(letter);
         Map <Character, Integer> alphabetMap = new HashMap<>();
         int valueOfMap = 0;
-        for (char letterOfAlphabet = 'a'; letterOfAlphabet <= 'z'; letterOfAlphabet++, valueOfMap++) {
-            alphabetMap.put(letterOfAlphabet, valueOfMap);
+        for (char i = 'a'; i <= 'z'; i++, valueOfMap++) {
+            alphabetMap.put(i, valueOfMap);
         }
         return alphabetMap.get(letter);
     }

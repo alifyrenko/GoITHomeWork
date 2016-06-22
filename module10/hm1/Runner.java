@@ -12,21 +12,9 @@ public class Runner {
         String inputFilePath = "d:\\Education\\Java\\input.txt";
         String outputFilePath = "d:\\Education\\Java\\output.txt";
 
-        InputStream reader = null;
-        OutputStream writer = null;
-
-        try {
-            reader = new FileInputStream(inputFilePath);
-            writer = new FileOutputStream(outputFilePath);
-
+        try (InputStream reader = new FileInputStream(inputFilePath);
+             OutputStream writer = new FileOutputStream(outputFilePath)){
             CipherFile.cipherFile(reader, writer);
-
-        } catch (IOException e) {
-            throw new IOException("Exception, when copy file from '" + inputFilePath + "' into '" + outputFilePath + "'", e);
-
-        } finally {
-            CipherFile.closeQuietly(reader);
-            CipherFile.closeAndFlushQuietly(writer);
         }
     }
 }

@@ -14,11 +14,9 @@ public class MessageCipher {
 
         List<String> listToSaveInFile = CaesarCipherMethod.cipher(listToCipher);
 
-        FileOutputStream myFile = new FileOutputStream("cipheredFile.txt");
-        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(myFile, "UTF8"));
-        writer.write(listToSaveInFile.toString());
-
-        writer.close();
-        myFile.close();
+        try (FileOutputStream myFile = new FileOutputStream("cipheredFile.txt");
+             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(myFile, "UTF8"))) {
+            writer.write(listToSaveInFile.toString());
+        }
     }
 }

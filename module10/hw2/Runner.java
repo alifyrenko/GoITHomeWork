@@ -12,7 +12,7 @@ import java.util.List;
 public class Runner {
     public static void main(String[] args) throws IOException {
 
-       List<String> listToCipher = new ArrayList<>();
+        List<String> listToCipher = new ArrayList<>();
 
         listToCipher.add("Chicken macnaggets");
         listToCipher.add("Apple juice");

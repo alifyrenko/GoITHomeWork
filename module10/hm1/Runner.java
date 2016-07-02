@@ -13,7 +13,7 @@ public class Runner {
         String outputFilePath = "d:\\Education\\Java\\output.txt";
 
         try (InputStream reader = new FileInputStream(inputFilePath);
-             OutputStream writer = new FileOutputStream(outputFilePath)){
+             OutputStream writer = new FileOutputStream(outputFilePath)) {
             CipherFile.cipherFile(reader, writer);
         }
     }
